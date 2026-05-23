@@ -1,0 +1,83 @@
+<nav
+  [class]="isScrolled()
+    ? 'fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-[#1a1612]/95 backdrop-blur-md shadow-lg shadow-black/20 py-3'
+    : 'fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent py-5'"
+>
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a routerLink="/" class="flex items-center gap-3 group" (click)="closeMenu()">
+      <div class="w-8 h-8 border border-[#c9a84c] rotate-45 flex items-center justify-center group-hover:bg-[#c9a84c] transition-colors duration-300">
+        <span class="text-[#c9a84c] group-hover:text-[#1a1612] font-serif text-xs font-bold -rotate-45 transition-colors duration-300">C</span>
+      </div>
+      <span class="font-serif text-xl text-[#f5f0e8] tracking-widest uppercase">CharlySarl</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <ul class="hidden lg:flex items-center gap-8">
+      @for (link of navLinks; track link.path) {
+        <li>
+          <a
+            [routerLink]="link.path"
+            routerLinkActive="text-[#c9a84c]"
+            [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+            class="text-[#f5f0e8]/70 hover:text-[#c9a84c] text-sm tracking-widest uppercase font-medium transition-colors duration-300 relative group"
+          >
+            {{ link.label }}
+            <span class="absolute -bottom-1 left-0 w-0 h-px bg-[#c9a84c] group-hover:w-full transition-all duration-300"></span>
+          </a>
+        </li>
+      }
+    </ul>
+
+    <!-- CTA -->
+    <a
+      routerLink="/contact"
+      class="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 border border-[#c9a84c] text-[#c9a84c] text-sm tracking-widest uppercase font-medium hover:bg-[#c9a84c] hover:text-[#1a1612] transition-all duration-300"
+    >
+      Contact
+    </a>
+
+    <!-- Mobile burger -->
+    <button
+      (click)="toggleMenu()"
+      class="lg:hidden flex flex-col gap-1.5 p-2"
+      aria-label="Menu"
+    >
+      <span [class]="isMenuOpen() ? 'block w-6 h-0.5 bg-[#c9a84c] transition-all duration-300 rotate-45 translate-y-2' : 'block w-6 h-0.5 bg-[#f5f0e8] transition-all duration-300'"></span>
+      <span [class]="isMenuOpen() ? 'block w-6 h-0.5 bg-[#c9a84c] opacity-0 transition-all duration-300' : 'block w-6 h-0.5 bg-[#f5f0e8] transition-all duration-300'"></span>
+      <span [class]="isMenuOpen() ? 'block w-6 h-0.5 bg-[#c9a84c] transition-all duration-300 -rotate-45 -translate-y-2' : 'block w-6 h-0.5 bg-[#f5f0e8] transition-all duration-300'"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div [class]="isMenuOpen()
+    ? 'lg:hidden bg-[#1a1612]/98 backdrop-blur-md border-t border-[#c9a84c]/20 max-h-screen overflow-hidden transition-all duration-500'
+    : 'lg:hidden max-h-0 overflow-hidden transition-all duration-500'"
+  >
+    <ul class="flex flex-col px-6 py-6 gap-4">
+      @for (link of navLinks; track link.path) {
+        <li>
+          <a
+            [routerLink]="link.path"
+            routerLinkActive="text-[#c9a84c]"
+            [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+            (click)="closeMenu()"
+            class="text-[#f5f0e8]/70 hover:text-[#c9a84c] text-sm tracking-widest uppercase font-medium transition-colors duration-300 block py-2"
+          >
+            {{ link.label }}
+          </a>
+        </li>
+      }
+      <li class="pt-2">
+        <a
+          routerLink="/contact"
+          (click)="closeMenu()"
+          class="inline-flex items-center gap-2 px-6 py-2.5 border border-[#c9a84c] text-[#c9a84c] text-sm tracking-widest uppercase font-medium hover:bg-[#c9a84c] hover:text-[#1a1612] transition-all duration-300"
+        >
+          Contact
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

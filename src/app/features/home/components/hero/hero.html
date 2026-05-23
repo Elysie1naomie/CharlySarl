@@ -1,0 +1,87 @@
+<section class="relative h-screen min-h-[600px] overflow-hidden">
+
+  <!-- Slides -->
+  @for (slide of slides; track slide.tag; let i = $index) {
+    <div
+      class="absolute inset-0 transition-opacity duration-1000"
+      [class.opacity-100]="currentSlide() === i"
+      [class.opacity-0]="currentSlide() !== i"
+    >
+      <img
+        [src]="slide.image"
+        [alt]="slide.tag"
+        class="w-full h-full object-cover scale-105 transition-transform duration-[8000ms]"
+        [class.scale-100]="currentSlide() === i"
+        loading="eager"
+      />
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#1a1612]/90 via-[#1a1612]/60 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#1a1612]/80 via-transparent to-transparent"></div>
+    </div>
+  }
+
+  <!-- Content -->
+  <div class="relative z-10 h-full flex items-center">
+    <div class="max-w-7xl mx-auto px-6 w-full">
+      <div class="max-w-2xl">
+
+        @for (slide of slides; track slide.tag; let i = $index) {
+          @if (currentSlide() === i) {
+            <!-- Tag -->
+            <div class="flex items-center gap-3 mb-6 animate-fade-in">
+              <div class="w-8 h-px bg-[#c9a84c]"></div>
+              <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase font-medium">{{ slide.tag }}</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl text-[#f5f0e8] leading-tight mb-6 animate-fade-in-up" style="white-space: pre-line">
+              {{ slide.title }}
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-[#f5f0e8]/60 text-lg leading-relaxed mb-10 max-w-lg animate-fade-in-up delay-200">
+              {{ slide.subtitle }}
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-wrap gap-4 animate-fade-in-up delay-300">
+              <a
+                routerLink="/realisations"
+                class="inline-flex items-center gap-3 px-8 py-4 bg-[#c9a84c] text-[#1a1612] text-sm tracking-widest uppercase font-semibold hover:bg-[#b8963e] transition-all duration-300 group"
+              >
+                Voir nos réalisations
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+              <a
+                routerLink="/contact"
+                class="inline-flex items-center gap-3 px-8 py-4 border border-[#f5f0e8]/40 text-[#f5f0e8] text-sm tracking-widest uppercase font-medium hover:border-[#c9a84c] hover:text-[#c9a84c] transition-all duration-300"
+              >
+                Demander un devis
+              </a>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide indicators -->
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex gap-3">
+    @for (slide of slides; track slide.tag; let i = $index) {
+      <button
+        (click)="goToSlide(i)"
+        [attr.aria-label]="'Slide ' + (i + 1)"
+        class="transition-all duration-300"
+        [class]="currentSlide() === i ? 'w-8 h-1 bg-[#c9a84c]' : 'w-4 h-1 bg-[#f5f0e8]/30 hover:bg-[#f5f0e8]/60'"
+      ></button>
+    }
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-10 right-8 z-10 flex flex-col items-center gap-2 animate-fade-in delay-600">
+    <span class="text-[#f5f0e8]/40 text-xs tracking-[0.3em] uppercase rotate-90 origin-center mb-4">Scroll</span>
+    <div class="w-px h-12 bg-gradient-to-b from-[#c9a84c] to-transparent"></div>
+  </div>
+</section>

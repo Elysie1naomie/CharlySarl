@@ -1,0 +1,6 @@
+{
+  "kiroAgent.configureMCP": "Disabled",
+  "angular.experimental.enableProjectBasedLanguageService": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}

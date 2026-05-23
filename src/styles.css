@@ -1,3 +1,130 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
+
+@theme {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --color-wood-50: #faf6f0;
+  --color-wood-100: #f2e8d9;
+  --color-wood-200: #e4cdb0;
+  --color-wood-300: #d4aa7d;
+  --color-wood-400: #c4894e;
+  --color-wood-500: #b8722e;
+  --color-wood-600: #9a5c22;
+  --color-wood-700: #7c481c;
+  --color-wood-800: #5e3614;
+  --color-wood-900: #3d2209;
+
+  --color-charcoal-900: #1a1612;
+  --color-charcoal-800: #2a2118;
+  --color-charcoal-700: #3d3028;
+  --color-charcoal-600: #524238;
+
+  --color-cream: #f5f0e8;
+  --color-gold: #c9a84c;
+  --color-copper: #b87333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-charcoal-900);
+  color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-charcoal-900); }
+::-webkit-scrollbar-thumb { background: var(--color-wood-600); border-radius: 3px; }
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* Intersection observer hidden state */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
