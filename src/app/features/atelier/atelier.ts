@@ -17,9 +17,9 @@ export class AtelierComponent {
   ];
 
   gallery = [
-    'https://images.unsplash.com/photo-1565372195458-9de0b320ef04?w=800&q=80',
-    'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&q=80',
-    'https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=800&q=80',
-    'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80',
+    'https://res.cloudinary.com/drknixj4y/image/upload/v1779653398/WhatsApp_Image_2026-05-24_at_8.49.18_PM_qqmire.jpg',
+    'https://res.cloudinary.com/drknixj4y/image/upload/v1779653400/WhatsApp_Image_2026-05-24_at_8.49.17_PM_cg1zha.jpg',
+    'https://res.cloudinary.com/drknixj4y/image/upload/v1779653387/WhatsApp_Image_2026-05-24_at_8.49.12_PM_hnhudl.jpg',
+    'https://res.cloudinary.com/drknixj4y/image/upload/v1779653382/WhatsApp_Image_2026-05-24_at_8.49.17_PM_1_h9xjsw.jpg',
   ];
 }

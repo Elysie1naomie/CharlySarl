@@ -13,15 +13,15 @@ export class RealisationsComponent {
   filters = ['Tous', 'Mobilier', 'Cuisine', 'Dressing', 'Bibliothèque', 'Restauration'];
 
   allProjects = [
-    { image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80', title: 'Canapé sur mesure', category: 'Mobilier', year: '2024' },
-    { image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80', title: 'Cuisine contemporaine', category: 'Cuisine', year: '2024' },
-    { image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80', title: 'Dressing walk-in', category: 'Dressing', year: '2023' },
-    { image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80', title: 'Bibliothèque murale', category: 'Bibliothèque', year: '2024' },
-    { image: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80', title: 'Table de salle à manger', category: 'Mobilier', year: '2023' },
-    { image: 'https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=800&q=80', title: 'Restauration armoire ancienne', category: 'Restauration', year: '2023' },
-    { image: 'https://images.unsplash.com/photo-1565372195458-9de0b320ef04?w=800&q=80', title: 'Cuisine rustique', category: 'Cuisine', year: '2022' },
-    { image: 'https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=800&q=80', title: 'Bureau sur mesure', category: 'Mobilier', year: '2024' },
-    { image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&q=80', title: 'Dressing chambre', category: 'Dressing', year: '2022' },
+    { image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653432/WhatsApp_Image_2026-05-24_at_8.49.42_PM_lcgjje.jpg', title: 'Mobilier sur mesure', category: 'Mobilier', year: '2025' },
+    { image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653413/WhatsApp_Image_2026-05-24_at_8.50.23_PM_matoki.jpg', title: 'Cuisine contemporaine', category: 'Cuisine', year: '2025' },
+    { image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653412/WhatsApp_Image_2026-05-24_at_8.50.41_PM_bwed14.jpg', title: 'Dressing walk-in', category: 'Dressing', year: '2025' },
+    { image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653414/WhatsApp_Image_2026-05-24_at_8.51.04_PM_phdzc3.jpg', title: 'Bibliothèque murale', category: 'Bibliothèque', year: '2025' },
+    { image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653412/WhatsApp_Image_2026-05-24_at_8.51.28_PM_k7yafc.jpg', title: 'Agencement intérieur', category: 'Mobilier', year: '2024' },
+    { image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653411/WhatsApp_Image_2026-05-24_at_8.51.47_PM_g339bw.jpg', title: 'Restauration meuble', category: 'Restauration', year: '2024' },
+    { image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653405/WhatsApp_Image_2026-05-24_at_8.49.18_PM_1_hldxwh.jpg', title: 'Cuisine équipée', category: 'Cuisine', year: '2024' },
+    { image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653403/WhatsApp_Image_2026-05-24_at_8.49.16_PM_rolfpp.jpg', title: 'Bureau sur mesure', category: 'Mobilier', year: '2024' },
+    { image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653401/WhatsApp_Image_2026-05-24_at_8.49.16_PM_1_vf2wrg.jpg', title: 'Dressing chambre', category: 'Dressing', year: '2024' },
   ];
 
   get filteredProjects() {

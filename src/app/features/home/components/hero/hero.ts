@@ -20,19 +20,19 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   slides: Slide[] = [
     {
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80',
+      image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653432/WhatsApp_Image_2026-05-24_at_8.49.42_PM_lcgjje.jpg',
       tag: 'Savoir-faire artisanal',
       title: "L'art du bois, élevé au rang de chef-d'œuvre.",
       subtitle: "Chaque création naît d'une passion profonde pour la matière et d'une exigence absolue de perfection.",
     },
     {
-      image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=1920&q=80',
+      image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653413/WhatsApp_Image_2026-05-24_at_8.50.23_PM_matoki.jpg',
       tag: 'Mobilier sur mesure',
       title: 'Votre espace, notre vision, une œuvre unique.',
       subtitle: 'Des pièces conçues pour durer, pensées pour vous, façonnées à la main avec soin.',
     },
     {
-      image: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=1920&q=80',
+      image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653412/WhatsApp_Image_2026-05-24_at_8.50.41_PM_bwed14.jpg',
       tag: "Atelier d'excellence",
       title: 'La précision comme signature, le bois comme âme.',
       subtitle: 'Depuis notre atelier, nous donnons vie à vos projets les plus ambitieux.',

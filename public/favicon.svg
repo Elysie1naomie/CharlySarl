@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Dark background -->
+  <rect width="100" height="100" fill="#1a1612"/>
+  <!-- Diamond shape (rotated square) -->
+  <rect x="18" y="18" width="64" height="64" rx="2" fill="none" stroke="#c9a84c" stroke-width="2.5" transform="rotate(45 50 50)"/>
+  <!-- Letter C -->
+  <text x="50" y="57" font-family="Georgia, serif" font-size="36" font-weight="600" fill="#c9a84c" text-anchor="middle">C</text>
+</svg>

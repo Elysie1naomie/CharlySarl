@@ -11,33 +11,33 @@ import { RevealDirective } from '../../../../shared/directives/reveal.directive'
 export class RealisationsPreviewComponent {
   projects = [
     {
-      image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80',
-      category: 'Commandes sur mesure',
-      title: 'Custom Orders',
+      image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653432/WhatsApp_Image_2026-05-24_at_8.49.42_PM_lcgjje.jpg',
+      category: 'Menuiserie sur mesure',
+      title: 'Mobilier Premium',
       count: 76,
     },
     {
-      image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80',
-      category: 'Aménagement',
-      title: 'Planning',
+      image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653413/WhatsApp_Image_2026-05-24_at_8.50.23_PM_matoki.jpg',
+      category: 'Aménagement intérieur',
+      title: 'Dressing & Rangements',
       count: 45,
     },
     {
-      image: 'https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=800&q=80',
-      category: 'Coordination',
-      title: 'Repairs',
+      image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653412/WhatsApp_Image_2026-05-24_at_8.50.41_PM_bwed14.jpg',
+      category: 'Cuisine',
+      title: 'Cuisines équipées',
       count: 34,
     },
     {
-      image: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80',
-      category: 'Finition',
-      title: 'Sanding',
+      image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653414/WhatsApp_Image_2026-05-24_at_8.51.04_PM_phdzc3.jpg',
+      category: 'Portes & Fenêtres',
+      title: 'Menuiserie bois',
       count: 56,
     },
     {
-      image: 'https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=800&q=80',
-      category: 'Traitement',
-      title: 'Staining',
+      image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653412/WhatsApp_Image_2026-05-24_at_8.51.28_PM_k7yafc.jpg',
+      category: 'Finitions',
+      title: 'Travaux de finition',
       count: 98,
     },
   ];
