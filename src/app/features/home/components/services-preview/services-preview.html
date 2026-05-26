@@ -1,60 +1,75 @@
-<section class="py-24 bg-[#f5f0e8]">
+<section class="py-24 bg-[#1a1612]">
   <div class="max-w-7xl mx-auto px-6">
 
     <!-- Header -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-16">
-      <div appReveal revealClass="reveal-left">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-8 h-px bg-[#c9a84c]"></div>
-          <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase font-medium">Nos services</span>
-        </div>
-        <h2 class="font-serif text-4xl md:text-5xl text-[#1a1612] leading-tight">
-          Ce qu'on fait,<br>on le fait bien
-        </h2>
+    <div class="text-center mb-16" appReveal>
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <div class="w-8 h-px bg-[#c9a84c]"></div>
+        <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase font-medium">Nos services</span>
+        <div class="w-8 h-px bg-[#c9a84c]"></div>
       </div>
-      <div appReveal>
-        <p class="text-[#3d3028]/60 leading-relaxed mb-6">
-          Notre équipe est disponible pour répondre à tous vos besoins en menuiserie. Que vous soyez un particulier ou une entreprise à Bafoussam et dans la région, on vous propose des solutions adaptées à votre budget et à vos attentes.
-        </p>
-        <ul class="space-y-2">
-          @for (item of ['Travail soigné et livré dans les délais', 'Devis gratuit et sans engagement', 'Service après-vente disponible']; track item) {
-            <li class="flex items-center gap-3 text-[#3d3028]/70 text-sm">
-              <svg class="w-4 h-4 text-[#c9a84c] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-              {{ item }}
-            </li>
-          }
-        </ul>
-      </div>
+      <h2 class="font-serif text-4xl md:text-5xl text-[#f5f0e8] leading-tight">
+        Ce qu'on fait,<br>on le fait bien
+      </h2>
     </div>
 
-    <!-- Services grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Services image grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 auto-rows-[220px]">
       @for (service of services; track service.title; let i = $index) {
-        <div
+        <a
+          routerLink="/services"
           appReveal
           [revealDelay]="i * 80"
-          class="bg-white p-8 group hover:bg-[#1a1612] transition-all duration-500 cursor-default"
+          class="relative overflow-hidden group cursor-pointer block"
+          [class.md:col-span-2]="service.large && i === 0"
+          [class.md:col-span-2]="service.large && i === 5"
         >
-          <div class="text-[#c9a84c] mb-6 group-hover:scale-110 transition-transform duration-300 inline-block" [innerHTML]="service.icon"></div>
-          <h3 class="font-serif text-xl text-[#1a1612] group-hover:text-[#f5f0e8] mb-3 transition-colors duration-500">{{ service.title }}</h3>
-          <p class="text-[#3d3028]/60 group-hover:text-[#f5f0e8]/50 text-sm leading-relaxed transition-colors duration-500">{{ service.description }}</p>
-        </div>
+          <!-- Image -->
+          <img
+            [src]="service.image"
+            [alt]="service.title"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+            loading="lazy"
+          />
+
+          <!-- Overlay permanent bas -->
+          <div class="absolute inset-0 bg-gradient-to-t from-[#1a1612]/90 via-[#1a1612]/20 to-transparent"></div>
+
+          <!-- Hover overlay -->
+          <div class="absolute inset-0 bg-[#c9a84c]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+          <!-- Contenu -->
+          <div class="absolute bottom-0 left-0 right-0 p-5">
+            <!-- Ligne dorée animée -->
+            <div class="w-0 group-hover:w-8 h-px bg-[#c9a84c] mb-3 transition-all duration-500"></div>
+            <h3 class="font-serif text-lg text-[#f5f0e8] mb-1 group-hover:text-[#c9a84c] transition-colors duration-300">
+              {{ service.title }}
+            </h3>
+            <p class="text-[#f5f0e8]/50 text-xs leading-relaxed max-h-0 group-hover:max-h-12 overflow-hidden transition-all duration-500">
+              {{ service.description }}
+            </p>
+          </div>
+
+          <!-- Numéro -->
+          <div class="absolute top-4 right-4 w-8 h-8 border border-[#c9a84c]/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-[#c9a84c] text-xs font-bold">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</span>
+          </div>
+        </a>
       }
     </div>
 
     <!-- CTA -->
-    <div class="text-center mt-12" appReveal>
+    <div class="text-center mt-10" appReveal>
       <a
         routerLink="/services"
-        class="inline-flex items-center gap-3 px-10 py-4 bg-[#1a1612] text-[#f5f0e8] text-sm tracking-widest uppercase font-medium hover:bg-[#c9a84c] hover:text-[#1a1612] transition-all duration-300 group"
+        class="inline-flex items-center gap-3 px-10 py-4 bg-[#c9a84c] text-[#1a1612] text-sm tracking-widest uppercase font-semibold hover:bg-[#b8963e] transition-all duration-300 group"
       >
-        Tous nos services
+        Voir tous nos services
         <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
         </svg>
       </a>
     </div>
+
   </div>
 </section>
