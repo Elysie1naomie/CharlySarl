@@ -29,12 +29,12 @@ export class ContactComponent {
   };
 
   services = [
-    'Mobilier sur mesure',
-    'Cuisine',
-    'Dressing',
-    'Bibliothèque',
-    'Restauration',
-    'Agencement intérieur',
+    'Mobilier sur commande',
+    'Cuisine équipée',
+    'Dressing et placards',
+    'Bibliothèque et étagères',
+    'Restauration de meubles',
+    'Aménagement intérieur',
     'Autre',
   ];
 

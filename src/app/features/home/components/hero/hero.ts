@@ -20,22 +20,22 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   slides: Slide[] = [
     {
-      image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653432/WhatsApp_Image_2026-05-24_at_8.49.42_PM_lcgjje.jpg',
-      tag: 'Savoir-faire artisanal',
-      title: "L'art du bois, élevé au rang de chef-d'œuvre.",
-      subtitle: "Chaque création naît d'une passion profonde pour la matière et d'une exigence absolue de perfection.",
+      image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653412/WhatsApp_Image_2026-05-24_at_8.50.41_PM_bwed14.jpg',
+      tag: 'Menuiserie de qualité',
+      title: 'Le bois travaillé avec soin, à Bafoussam.',
+      subtitle: 'Chaque meuble qu\'on fabrique, c\'est du travail bien fait, avec des matériaux solides et une finition qui dure.',
     },
     {
       image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653413/WhatsApp_Image_2026-05-24_at_8.50.23_PM_matoki.jpg',
-      tag: 'Mobilier sur mesure',
-      title: 'Votre espace, notre vision, une œuvre unique.',
-      subtitle: 'Des pièces conçues pour durer, pensées pour vous, façonnées à la main avec soin.',
+      tag: 'Mobilier sur commande',
+      title: 'Votre maison mérite le meilleur.',
+      subtitle: 'On conçoit vos meubles selon vos goûts et votre budget. Du salon à la chambre, on s\'occupe de tout.',
     },
     {
       image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653412/WhatsApp_Image_2026-05-24_at_8.50.41_PM_bwed14.jpg',
-      tag: "Atelier d'excellence",
-      title: 'La précision comme signature, le bois comme âme.',
-      subtitle: 'Depuis notre atelier, nous donnons vie à vos projets les plus ambitieux.',
+      tag: 'Atelier CharlySarl',
+      title: 'Un travail sérieux, des résultats qui parlent.',
+      subtitle: 'Depuis notre atelier à Bafoussam, on réalise vos projets avec rigueur et passion du métier.',
     },
   ];
 

@@ -9,11 +9,11 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
 })
 export class AtelierComponent {
   steps = [
-    { number: '01', title: 'Consultation', description: 'Nous écoutons vos besoins et vos envies pour comprendre votre projet dans ses moindres détails.' },
-    { number: '02', title: 'Conception', description: 'Nos artisans dessinent et modélisent votre projet, en sélectionnant les essences de bois les plus adaptées.' },
-    { number: '03', title: 'Fabrication', description: 'Chaque pièce est façonnée à la main dans notre atelier, avec des outils traditionnels et modernes.' },
-    { number: '04', title: 'Finition', description: 'Ponçage, teinture, vernissage — chaque détail est soigné pour un rendu parfait et durable.' },
-    { number: '05', title: 'Livraison', description: 'Installation soignée chez vous, avec un suivi après-vente pour votre entière satisfaction.' },
+    { number: '01', title: 'On discute de votre projet', description: 'Vous nous expliquez ce que vous voulez. On écoute, on pose des questions et on comprend bien vos besoins avant de commencer quoi que ce soit.' },
+    { number: '02', title: 'On fait les plans', description: 'Nos menuisiers dessinent votre projet et choisissent les bois adaptés. On vous montre le résultat avant de lancer la fabrication.' },
+    { number: '03', title: 'On fabrique dans notre atelier', description: 'Chaque pièce est fabriquée à la main dans notre atelier à Bafoussam, avec des outils adaptés et un soin particulier apporté à chaque étape.' },
+    { number: '04', title: 'On soigne les finitions', description: 'Ponçage, teinture, vernis — on ne livre rien qui ne soit pas bien fini. Le rendu doit être propre et durable.' },
+    { number: '05', title: 'On livre et on installe', description: 'On pose vos meubles chez vous et on s\'assure que tout est bien en place. On reste disponibles après la livraison si vous avez des questions.' },
   ];
 
   gallery = [

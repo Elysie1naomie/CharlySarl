@@ -9,56 +9,139 @@
         <div class="w-8 h-px bg-[#c9a84c]"></div>
       </div>
       <h2 class="font-serif text-4xl md:text-5xl text-[#f5f0e8] leading-tight">
-        Shaping the future<br>of your interiors
+        Quelques-unes de<br>nos réalisations
       </h2>
     </div>
 
-    <!-- Grid -->
+    <!-- Grid 3x3 : 8 images + 1 bloc stat -->
     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
 
-      <!-- Large card with stat -->
-      <div class="col-span-2 lg:col-span-1 row-span-1 lg:row-span-2 flex flex-col gap-4">
-        <!-- Stat block -->
-        <div appReveal class="bg-[#2a2118] p-8 flex flex-col justify-center">
-          <div class="font-serif text-6xl text-[#f5f0e8] font-bold mb-2">+23</div>
-          <div class="text-[#c9a84c] text-sm tracking-widest uppercase mb-4">Tailored Quality Solutions</div>
-          <a
-            routerLink="/realisations"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-[#c9a84c] text-[#1a1612] text-xs tracking-widest uppercase font-semibold hover:bg-[#b8963e] transition-all duration-300 self-start group"
-          >
-            Voir tout
-            <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Project cards -->
-      @for (project of projects; track project.title; let i = $index) {
+      <!-- Row 1 & 2 : 6 project cards -->
+      @for (project of projects.slice(0, 6); track project.title; let i = $index) {
         <div
           appReveal
-          [revealDelay]="i * 100"
+          [revealDelay]="i * 80"
           class="relative overflow-hidden group cursor-pointer"
+          (click)="openLightbox(i)"
+          (keydown.enter)="openLightbox(i)"
+          tabindex="0"
+          role="button"
+          [attr.aria-label]="'Voir ' + project.title"
         >
           <img
             [src]="project.image"
             [alt]="project.title"
-            class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
+            class="w-full h-48 object-cover group-hover:scale-125 transition-transform duration-700 ease-in-out"
             loading="lazy"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#1a1612]/80 to-transparent"></div>
-          <!-- Count badge -->
+          <div class="absolute inset-0 bg-gradient-to-t from-[#1a1612]/80 to-transparent group-hover:from-[#1a1612]/60 transition-all duration-700"></div>
           <div class="absolute top-3 left-3 bg-[#c9a84c] text-[#1a1612] text-xs font-bold px-2 py-1">
             {{ project.count }}+
           </div>
-          <!-- Info -->
           <div class="absolute bottom-0 left-0 right-0 p-4">
             <p class="text-[#c9a84c] text-xs tracking-widest uppercase mb-1">{{ project.category }}</p>
             <p class="text-[#f5f0e8] font-serif text-lg">{{ project.title }}</p>
           </div>
         </div>
       }
+
+      <!-- Row 3 : stat block + 2 project cards -->
+      <div appReveal class="bg-[#2a2118] p-8 flex flex-col justify-center">
+        <div class="font-serif text-6xl text-[#f5f0e8] font-bold mb-2">+26</div>
+        <div class="text-[#c9a84c] text-sm tracking-widest uppercase mb-4">Commandes sur mesure</div>
+        <a
+          routerLink="/realisations"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-[#c9a84c] text-[#1a1612] text-xs tracking-widest uppercase font-semibold hover:bg-[#b8963e] transition-all duration-300 self-start group"
+        >
+          Voir tout
+          <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+
+      @for (project of projects.slice(6, 8); track project.title; let i = $index) {
+        <div
+          appReveal
+          [revealDelay]="(i + 6) * 80"
+          class="relative overflow-hidden group cursor-pointer"
+          (click)="openLightbox(i + 6)"
+          (keydown.enter)="openLightbox(i + 6)"
+          tabindex="0"
+          role="button"
+          [attr.aria-label]="'Voir ' + project.title"
+        >
+          <img
+            [src]="project.image"
+            [alt]="project.title"
+            class="w-full h-48 object-cover group-hover:scale-125 transition-transform duration-700 ease-in-out"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#1a1612]/80 to-transparent group-hover:from-[#1a1612]/60 transition-all duration-700"></div>
+          <div class="absolute top-3 left-3 bg-[#c9a84c] text-[#1a1612] text-xs font-bold px-2 py-1">
+            {{ project.count }}+
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-4">
+            <p class="text-[#c9a84c] text-xs tracking-widest uppercase mb-1">{{ project.category }}</p>
+            <p class="text-[#f5f0e8] font-serif text-lg">{{ project.title }}</p>
+          </div>
+        </div>
+      }
+
     </div>
   </div>
 </section>
+
+<!-- Lightbox -->
+@if (lightboxOpen()) {
+  <div
+    class="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center"
+    (click)="closeLightbox()"
+  >
+    <button
+      class="absolute top-6 right-6 text-white/60 hover:text-white transition-colors duration-300 z-10"
+      (click)="closeLightbox()"
+      aria-label="Fermer"
+    >
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <button
+      class="absolute left-4 md:left-6 z-10 w-12 h-12 flex items-center justify-center border border-white/20 text-white/60 hover:border-[#c9a84c] hover:text-[#c9a84c] transition-all duration-300"
+      (click)="$event.stopPropagation(); prev()"
+      aria-label="Image précédente"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/>
+      </svg>
+    </button>
+
+    <div class="flex flex-col items-center gap-4" (click)="$event.stopPropagation()">
+      <img
+        [src]="projects[lightboxIndex()].image"
+        [alt]="projects[lightboxIndex()].title"
+        class="max-w-[85vw] max-h-[80vh] object-contain"
+      />
+      <div class="text-center">
+        <p class="text-[#c9a84c] text-xs tracking-widest uppercase mb-1">{{ projects[lightboxIndex()].category }}</p>
+        <p class="text-[#f5f0e8] font-serif text-lg">{{ projects[lightboxIndex()].title }}</p>
+      </div>
+    </div>
+
+    <button
+      class="absolute right-4 md:right-6 z-10 w-12 h-12 flex items-center justify-center border border-white/20 text-white/60 hover:border-[#c9a84c] hover:text-[#c9a84c] transition-all duration-300"
+      (click)="$event.stopPropagation(); next()"
+      aria-label="Image suivante"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
+      </svg>
+    </button>
+
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/40 text-sm">
+      {{ lightboxIndex() + 1 }} / {{ projects.length }}
+    </div>
+  </div>
+}

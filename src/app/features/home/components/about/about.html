@@ -2,19 +2,19 @@
   <div class="max-w-7xl mx-auto px-6">
 
     <!-- Top: image + text split -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 mb-24 overflow-hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden">
 
       <!-- Text side -->
       <div class="bg-white p-12 lg:p-16 flex flex-col justify-center" appReveal revealClass="reveal-left">
         <div class="flex items-center gap-3 mb-6">
           <div class="w-8 h-px bg-[#c9a84c]"></div>
-          <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase font-medium">Découvrez notre savoir-faire</span>
+          <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase font-medium">Notre savoir-faire</span>
         </div>
         <h2 class="font-serif text-4xl md:text-5xl text-[#1a1612] leading-tight mb-6">
-          Discover craftsmanship<br>in our projects
+          Un travail bien fait,<br>à chaque commande
         </h2>
         <p class="text-[#3d3028]/60 leading-relaxed mb-8">
-          Nous croyons en la création de liens durables avec nos clients grâce à un service personnalisé et une attention aux détails. Que vous cherchiez des conseils ou un soutien technique, notre équipe est là pour vous.
+          Chez CharlySarl, on croit que chaque client mérite un service personnalisé et un résultat qui tient la route. Que ce soit pour votre maison, votre bureau ou votre commerce, on est là pour vous accompagner du début à la fin.
         </p>
         <a
           routerLink="/atelier"
@@ -37,54 +37,11 @@
         />
         <!-- Overlay badge -->
         <div class="absolute bottom-0 right-0 bg-[#2a4a3a] p-6 text-white">
-          <p class="font-serif text-lg">Explore our world</p>
-          <p class="text-white/60 text-sm mt-1">High Quality Standards</p>
+          <p class="font-serif text-lg">Nos réalisations parlent</p>
+          <p class="text-white/60 text-sm mt-1">Qualité garantie à Bafoussam</p>
         </div>
       </div>
     </div>
 
-    <!-- Bottom: Your dream space section -->
-    <div class="text-center mb-16" appReveal>
-      <div class="flex items-center justify-center gap-3 mb-4">
-        <div class="w-8 h-px bg-[#c9a84c]"></div>
-        <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase font-medium">Votre espace de rêve</span>
-        <div class="w-8 h-px bg-[#c9a84c]"></div>
-      </div>
-      <h2 class="font-serif text-4xl md:text-5xl text-[#1a1612] leading-tight">
-        Your dream space<br>starts with us
-      </h2>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <!-- Image -->
-      <div class="relative overflow-hidden rounded-sm" appReveal revealClass="reveal-left">
-        <img
-          src="https://res.cloudinary.com/drknixj4y/image/upload/v1779653401/WhatsApp_Image_2026-05-24_at_8.49.16_PM_1_vf2wrg.jpg"
-          alt="Outils de menuiserie"
-          class="w-full h-80 object-cover hover:scale-105 transition-transform duration-700"
-          loading="lazy"
-        />
-      </div>
-
-      <!-- Features list -->
-      <div class="space-y-8">
-        @for (feature of features; track feature.number; let i = $index) {
-          <div
-            appReveal
-            [revealDelay]="i * 150"
-            class="flex gap-6 group"
-          >
-            <div class="w-10 h-10 rounded-full bg-[#2a4a3a] flex items-center justify-center shrink-0 group-hover:bg-[#c9a84c] transition-colors duration-300">
-              <span class="text-white group-hover:text-[#1a1612] text-xs font-bold transition-colors duration-300">{{ feature.number }}</span>
-            </div>
-            <div>
-              <p class="text-[#c9a84c] text-xs tracking-widest uppercase mb-1">{{ feature.subtitle }}</p>
-              <h3 class="font-serif text-xl text-[#1a1612] mb-2">{{ feature.title }}</h3>
-              <p class="text-[#3d3028]/60 text-sm leading-relaxed">{{ feature.description }}</p>
-            </div>
-          </div>
-        }
-      </div>
-    </div>
   </div>
 </section>

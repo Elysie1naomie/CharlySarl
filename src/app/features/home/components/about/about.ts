@@ -12,21 +12,21 @@ export class AboutComponent {
   features = [
     {
       number: '01',
-      title: 'Wooden Elegance',
-      subtitle: 'Qualité by us',
-      description: 'Notre équipe livre des solutions sur mesure adaptées à vos besoins. Nous garantissons qualité et attention dans chaque projet.',
+      title: 'Du bois de qualité',
+      subtitle: 'Matériaux bien choisis',
+      description: 'On sélectionne les meilleurs bois disponibles pour garantir des meubles solides qui résistent dans le temps. Votre satisfaction, c\'est notre priorité.',
     },
     {
       number: '02',
-      title: 'Timber Network',
-      subtitle: 'Craftsmen at work',
-      description: 'Passionnés d\'excellence, nous travaillons uniquement avec des bois sélectionnés pour obtenir des résultats exceptionnels.',
+      title: 'Fait à la main',
+      subtitle: 'Travail d\'artisan',
+      description: 'Chaque pièce est fabriquée avec soin dans notre atelier à Bafoussam. On ne bâcle pas le travail — chaque détail compte.',
     },
     {
       number: '03',
-      title: 'Craftsman Studio',
-      subtitle: 'Created by artisans',
-      description: 'Avec plus de 15 ans d\'expérience, nous offrons des services qui dépassent les attentes. La finesse et le professionnalisme sont notre signature.',
+      title: 'Plus de 15 ans de métier',
+      subtitle: 'Expérience et sérieux',
+      description: 'Depuis plus de 15 ans, on accompagne les familles et entreprises de la région dans leurs projets d\'aménagement. Notre réputation, c\'est notre meilleure carte de visite.',
     },
   ];
 }

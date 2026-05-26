@@ -11,24 +11,24 @@ import { RevealDirective } from '../../../../shared/directives/reveal.directive'
 export class TestimonialsPreviewComponent {
   testimonials = [
     {
-      name: 'Marie Dupont',
-      role: 'Architecte d\'intérieur',
+      name: 'Nguemo Christelle',
+      role: 'Propriétaire, Bafoussam',
       avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80',
-      text: 'Un travail d\'une précision et d\'une beauté remarquables. CharlySarl a transformé notre vision en une réalité qui dépasse toutes nos attentes.',
+      text: 'CharlySarl a fabriqué tous les meubles de mon salon. Le travail est vraiment bien fait, les délais ont été respectés et le prix était correct. Je recommande à tout le monde.',
       rating: 5,
     },
     {
-      name: 'Pierre Martin',
-      role: 'Propriétaire',
+      name: 'Kamdem Rodrigue',
+      role: 'Commerçant, Bafoussam',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',
-      text: 'La cuisine sur mesure réalisée par CharlySarl est tout simplement parfaite. Chaque détail a été soigné avec une attention extraordinaire.',
+      text: 'J\'ai commandé une cuisine complète pour ma maison. Le résultat dépasse ce que j\'attendais. Les artisans sont sérieux et professionnels. Je suis très satisfait.',
       rating: 5,
     },
     {
-      name: 'Sophie Bernard',
-      role: 'Décoratrice',
+      name: 'Fomekong Nadège',
+      role: 'Architecte, Yaoundé',
       avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80',
-      text: 'Je recommande CharlySarl sans hésitation. Leur savoir-faire artisanal et leur sens du détail sont incomparables dans le secteur.',
+      text: 'Je travaille régulièrement avec CharlySarl pour mes chantiers dans la région de l\'Ouest. Leur sérieux et la qualité de leur travail m\'ont toujours impressionnée.',
       rating: 5,
     },
   ];

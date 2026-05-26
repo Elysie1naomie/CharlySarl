@@ -43,11 +43,16 @@
           appReveal
           [revealDelay]="i * 80"
           class="group relative overflow-hidden cursor-pointer"
+          (click)="openLightbox(i)"
+          (keydown.enter)="openLightbox(i)"
+          tabindex="0"
+          role="button"
+          [attr.aria-label]="'Voir ' + project.title"
         >
           <img
             [src]="project.image"
             [alt]="project.title"
-            class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
+            class="w-full h-72 object-cover group-hover:scale-125 transition-transform duration-700 ease-in-out"
             loading="lazy"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-[#1a1612] via-[#1a1612]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -55,12 +60,78 @@
             <p class="text-[#c9a84c] text-xs tracking-widest uppercase mb-1">{{ project.category }} · {{ project.year }}</p>
             <h3 class="font-serif text-xl text-[#f5f0e8]">{{ project.title }}</h3>
           </div>
-          <!-- Category badge always visible -->
           <div class="absolute top-4 left-4 bg-[#1a1612]/80 backdrop-blur-sm px-3 py-1">
             <span class="text-[#c9a84c] text-xs tracking-widest uppercase">{{ project.category }}</span>
+          </div>
+          <!-- Zoom icon -->
+          <div class="absolute top-4 right-4 w-8 h-8 bg-[#c9a84c]/0 group-hover:bg-[#c9a84c] flex items-center justify-center transition-all duration-300">
+            <svg class="w-4 h-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+            </svg>
           </div>
         </div>
       }
     </div>
   </div>
 </section>
+
+<!-- Lightbox -->
+@if (lightboxOpen()) {
+  <div
+    class="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center"
+    (click)="closeLightbox()"
+  >
+    <!-- Close -->
+    <button
+      class="absolute top-6 right-6 text-white/60 hover:text-white transition-colors duration-300 z-10"
+      (click)="closeLightbox()"
+      aria-label="Fermer"
+    >
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <!-- Prev -->
+    <button
+      class="absolute left-4 md:left-6 text-white/60 hover:text-white transition-colors duration-300 z-10 w-12 h-12 flex items-center justify-center border border-white/20 hover:border-[#c9a84c] hover:text-[#c9a84c]"
+      (click)="$event.stopPropagation(); prev()"
+      aria-label="Image précédente"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/>
+      </svg>
+    </button>
+
+    <!-- Image -->
+    <div class="flex flex-col items-center gap-4" (click)="$event.stopPropagation()">
+      <img
+        [src]="filteredProjects[lightboxIndex()].image"
+        [alt]="filteredProjects[lightboxIndex()].title"
+        class="max-w-[85vw] max-h-[80vh] object-contain"
+      />
+      <div class="text-center">
+        <p class="text-[#c9a84c] text-xs tracking-widest uppercase mb-1">
+          {{ filteredProjects[lightboxIndex()].category }} · {{ filteredProjects[lightboxIndex()].year }}
+        </p>
+        <p class="text-[#f5f0e8] font-serif text-lg">{{ filteredProjects[lightboxIndex()].title }}</p>
+      </div>
+    </div>
+
+    <!-- Next -->
+    <button
+      class="absolute right-4 md:right-6 text-white/60 hover:text-white transition-colors duration-300 z-10 w-12 h-12 flex items-center justify-center border border-white/20 hover:border-[#c9a84c] hover:text-[#c9a84c]"
+      (click)="$event.stopPropagation(); next()"
+      aria-label="Image suivante"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
+      </svg>
+    </button>
+
+    <!-- Counter -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/40 text-sm">
+      {{ lightboxIndex() + 1 }} / {{ filteredProjects.length }}
+    </div>
+  </div>
+}

@@ -21,9 +21,9 @@ export class FooterComponent {
   ];
 
   services = [
-    'Mobilier sur mesure',
-    'Cuisines',
-    'Dressings',
+    'Mobilier sur commande',
+    'Cuisines équipées',
+    'Dressings et placards',
     'Bibliothèques',
     'Restauration',
     'Agencement intérieur',
