@@ -40,11 +40,26 @@ export class ContactComponent {
 
   onSubmit() {
     this.loading.set(true);
-    // Simulate async submission
+
+    // Construire le message WhatsApp
+    const lines: string[] = [];
+    lines.push('Bonjour CharlySarl, voici une demande de contact :');
+    lines.push('');
+    lines.push(`Nom : ${this.form.name}`);
+    if (this.form.email) lines.push(`Email : ${this.form.email}`);
+    if (this.form.phone) lines.push(`Téléphone : ${this.form.phone}`);
+    if (this.form.service) lines.push(`Service souhaité : ${this.form.service}`);
+    lines.push('');
+    lines.push(`Message : ${this.form.message}`);
+
+    const text = encodeURIComponent(lines.join('\n'));
+    const url = `https://wa.me/237699604035?text=${text}`;
+
     setTimeout(() => {
       this.loading.set(false);
       this.submitted.set(true);
       this.form = { name: '', email: '', phone: '', service: '', message: '' };
-    }, 1500);
+      window.open(url, '_blank');
+    }, 800);
   }
 }
