@@ -14,7 +14,7 @@ export class TestimonialsPreviewComponent {
       name: 'Nguemo Christelle',
       role: 'Propriétaire, Bafoussam',
       avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80',
-      text: 'CharlySarl a fabriqué tous les meubles de mon salon. Le travail est vraiment bien fait, les délais ont été respectés et le prix était correct. Je recommande à tout le monde.',
+      text: 'Noutchowo et frères a fabriqué tous les meubles de mon salon. Le travail est vraiment bien fait, les délais ont été respectés et le prix était correct. Je recommande à tout le monde.',
       rating: 5,
     },
     {
@@ -28,7 +28,7 @@ export class TestimonialsPreviewComponent {
       name: 'Fomekong Nadège',
       role: 'Architecte, Yaoundé',
       avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80',
-      text: 'Je travaille régulièrement avec CharlySarl pour mes chantiers dans la région de l\'Ouest. Leur sérieux et la qualité de leur travail m\'ont toujours impressionnée.',
+      text: 'Je travaille régulièrement avec Noutchowo et frères pour mes chantiers dans la région de l\'Ouest. Leur sérieux et la qualité de leur travail m\'ont toujours impressionnée.',
       rating: 5,
     },
   ];

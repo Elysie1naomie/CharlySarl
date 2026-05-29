@@ -43,7 +43,7 @@ export class ContactComponent {
 
     // Construire le message WhatsApp
     const lines: string[] = [];
-    lines.push('Bonjour CharlySarl, voici une demande de contact :');
+    lines.push('Bonjour Noutchowo et frères, voici une demande de contact :');
     lines.push('');
     lines.push(`Nom : ${this.form.name}`);
     if (this.form.email) lines.push(`Email : ${this.form.email}`);

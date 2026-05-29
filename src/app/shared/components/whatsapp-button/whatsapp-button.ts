@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   template: `
     <a
-      href="https://wa.me/237699604035?text=Bonjour%20CharlySarl%2C%20je%20voudrais%20un%20devis%20pour%20un%20projet%20de%20menuiserie."
+      href="https://wa.me/237699604035?text=Bonjour%20Noutchowo et frères%2C%20je%20voudrais%20un%20devis%20pour%20un%20projet%20de%20menuiserie."
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contacter sur WhatsApp"

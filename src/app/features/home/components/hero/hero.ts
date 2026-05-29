@@ -33,7 +33,7 @@ export class HeroComponent implements OnInit, OnDestroy {
     },
     {
       image: 'https://res.cloudinary.com/drknixj4y/image/upload/v1779653412/WhatsApp_Image_2026-05-24_at_8.50.41_PM_bwed14.jpg',
-      tag: 'Atelier CharlySarl',
+      tag: 'Atelier Noutchowo et frères',
       title: 'Un travail sérieux, des résultats qui parlent.',
       subtitle: 'Depuis notre atelier à Bafoussam, on réalise vos projets avec rigueur et passion du métier.',
     },
